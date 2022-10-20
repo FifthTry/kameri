@@ -4,7 +4,3 @@ In order to plug in the todo application:
 
 - Create an application on [Supabase](https://supabase.com/)
 - Pass the keys using
-
--- ds.code:
-lang: ftd
-
