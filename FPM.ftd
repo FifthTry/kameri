@@ -1,0 +1,11 @@
+-- import: fpm
+
+-- fpm.package: fifthtry.github.io/kameri-wasm-backend
+zip: github.com/fifthtry/kameri-wasm-backend/archive/refs/heads/main.zip
+download-base-url: https://raw.githubusercontent.com/fifthtry/kameri-wasm-backend/main
+
+-- fpm.dependency: fifthtry.github.io/package-doc as pd
+
+-- fpm.dependency: fifthtry.github.io/doc-site as ds
+
+-- fpm.auto-import: ds
