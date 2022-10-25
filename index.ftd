@@ -20,7 +20,7 @@ caption: Install `fpm` binary for your system
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ftd-lang/fpm/main/install-fpm.sh)"
 
--- ds.h2: Deployment Guide
+-- ds.h2: New project
 
 - Clone the base FPM package
 - Configure your environment to pass the following variables
@@ -39,3 +39,31 @@ export FPM_SUPABASE_API_KEY=<admin-jwt-key-from-your-supabase-project>
 -- ds.markdown:
 
 And you're all set. You can now run your application using the `fpm serve` command.
+
+
+-- ds.h2: Add TODO to your existing project
+
+-- ds.code:
+lang: ftd
+caption: Include the dependency for the kameri app
+
+\; Import the `env` package
+\-- import: env
+
+\-- fpm.backend-header list package-headers:
+
+\-- package-headers:
+header-key: KAMERI-SUPABASE-PROJECT-ID
+header-value: $env.FPM_SUPABASE_PROJECT_ID
+
+\-- package-headers:
+header-key: KAMERI-SUPABASE-API-KEY
+header-value: $env.FPM_SUPABASE_API_KEY
+
+\-- fpm.package: <your-package-name>
+backend: true
+backend-headers: package-headers
+
+\-- fpm.dependency: fifthtry.github.io/kameri-wasm-backend
+mountpoint: /api/
+
