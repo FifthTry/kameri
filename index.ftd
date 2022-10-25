@@ -1,0 +1,11 @@
+-- import: fifthtry.github.io/kameri-wasm-backend/components as kameri
+
+-- kameri.todo list todos:
+$processor$: http
+method: get
+url: http://127.0.0.1:8001/api/todos/
+
+
+-- kameri.list-todo:
+todos: $todos
+add-todo-page: /add-todo/
