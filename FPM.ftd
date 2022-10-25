@@ -29,5 +29,8 @@ backend-headers: package-headers
 # Home: /
 
 - Getting Started: /
+  - Fresh package: /fresh-installation/
+  - Existing package: /existing-installation/
+  - Using the widgets: /using-widgets/
 - FAQ: /faq/
 - Demo: /demo/

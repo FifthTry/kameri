@@ -1,0 +1,38 @@
+-- ds.page: Using Kameri App widgets
+
+Kameri app exposes a couple of widgets that you can use in your application to 
+design and build your own custom TODO application.
+
+-- ds.h2: List TODOs widget
+
+-- ds.code:
+lang: ftd
+caption: Usage of the List TODOs component
+
+\; This line imports the todo list to your page. You can use it inside any component you desire
+\-- import: fifthtry.github.io/kameri-wasm-backend/components as kameri
+
+\; First we retrieve the TODO list from the backend using the http processor.
+\-- kameri.todo list todos:
+$processor$: http
+method: get
+url: http://127.0.0.1:8001/api/todos/
+
+
+\; Then we display the TODO list using the `list-todo` widget which requires the `todo list todos` variable.
+\-- kameri.list-todo:
+todos: $todos
+add-todo-page: /add-todo/
+
+
+-- ds.h2: Add TODO widget
+
+
+-- ds.code:
+lang: ftd
+caption: Usage of the Kameri app components
+
+\-- import: fifthtry.github.io/kameri-wasm-backend/components as kameri
+
+\; This line imports the `Add todo` widget to your fpm package.
+\-- kameri.add-todo-widget:

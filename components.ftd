@@ -1,4 +1,5 @@
 -- import: fpm
+-- import: ds
 -- import: fifthtry.github.io/kameri-wasm-backend/assets
 -- import: fifthtry.github.io/kameri-wasm-backend/utils
 
@@ -15,13 +16,9 @@ string title:
 string status:
 string description:
 
--- todo list todos:
-$processor$: http
-method: get
-url: http://127.0.0.1:8001/api/todos/
-
 
 -- ftd.column list-todo:
+todo list todos:
 width: percent 100
 padding-vertical: 20
 padding-horizontal: 50
@@ -245,3 +242,18 @@ description: $description
 $title-error: $title-error
 $status-error: $status-error
 $description-error: $description-error
+
+
+; Components for generating the documentation
+
+-- ftd.column set-env-variables:
+
+--- ds.code:
+lang: sh
+caption: Export environment variables for running your application
+
+# Supabase project > Settings > General > General Settings > Reference ID
+export FPM_SUPABASE_PROJECT_ID=<ID-for-your-supabase-project>
+
+# Supabase project > Settings > API > Project API keys > anon public
+export FPM_SUPABASE_API_KEY=<admin-jwt-key-from-your-supabase-project>

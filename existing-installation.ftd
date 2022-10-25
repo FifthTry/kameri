@@ -1,0 +1,44 @@
+-- import: fifthtry.github.io/kameri-wasm-backend/components as kameri-components
+
+-- ds.page: Embedding Kameri app into an existing `fpm` package
+
+Adding Kameri TODO to your existing project is pretty straightforward process.
+You need to define the application as a dependency and configure the variables
+needed for the application to work normally.
+
+-- ds.code:
+lang: ftd
+caption: FPM.ftd
+
+\; Import the `env` package
+\-- import: env
+
+\-- fpm.backend-header list package-headers:
+
+\-- package-headers:
+header-key: KAMERI-SUPABASE-PROJECT-ID
+header-value: $env.FPM_SUPABASE_PROJECT_ID
+
+\-- package-headers:
+header-key: KAMERI-SUPABASE-API-KEY
+header-value: $env.FPM_SUPABASE_API_KEY
+
+\-- fpm.package: <your-package-name>
+backend: true
+backend-headers: package-headers
+
+\-- fpm.dependency: fifthtry.github.io/kameri-wasm-backend as kameri
+mountpoint: /api/
+
+-- ds.markdown:
+
+Once the `FPM.ftd` has been configured properly, you'll need to export the
+appropriate variables from your shell environment
+
+-- kameri-components.set-env-variables:
+
+-- ds.markdown:
+
+Once the Kameri dependency has been added to your package, you can start using 
+the TODO application by refering to the `kameri-app` dependency's TODO
+application components.

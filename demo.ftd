@@ -2,5 +2,13 @@
 
 -- ds.page: Demo
 
+
+-- kameri-components.todo list todos:
+$processor$: http
+method: get
+url: http://127.0.0.1:8001/api/todos/
+
+
 -- kameri-components.list-todo:
+todos: $todos
 add-todo-page: /add-todo/
