@@ -1,6 +1,41 @@
 -- ds.page: FPM application to plug in TODO list to your website
 
+[Kameri]() is a FPM TODO application distribution. It uses WASM as a backend that you can use in your own
+package to introduce the TODO list functionality
+
+The Kameri app uses [Supabase](https://supabase.com/) as a backend data store 
+to persist the data in the Database.
+
+-- ds.h2: Prerequisites
+
 In order to plug in the todo application:
 
-- Create an application on [Supabase](https://supabase.com/)
-- Pass the keys using
+- Create an application on [Supabase](https://app.supabase.com/new/testy-brown-dkdgbph)
+- Migrate the DB schema to your Supabase application.
+- Install `fpm`
+
+-- ds.code:
+lang: sh
+caption: Install `fpm` binary for your system
+
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ftd-lang/fpm/main/install-fpm.sh)"
+
+-- ds.h2: Deployment Guide
+
+- Clone the base FPM package
+- Configure your environment to pass the following variables
+
+-- ds.code:
+lang: sh
+caption: Export environment variables for running your application
+
+# Supabase project > Settings > General > General Settings > Reference ID
+export FPM_SUPABASE_PROJECT_ID=<ID-for-your-supabase-project>
+
+# Supabase project > Settings > API > Project API keys > anon public
+export FPM_SUPABASE_API_KEY=<admin-jwt-key-from-your-supabase-project>
+
+
+-- ds.markdown:
+
+And you're all set. You can now run your application using the `fpm serve` command.
