@@ -1,0 +1,6 @@
+-- import: fifthtry.github.io/kameri-wasm-backend/components as kameri-components
+
+-- ds.page: Demo
+
+-- kameri-components.list-todo:
+add-todo-page: /add-todo/

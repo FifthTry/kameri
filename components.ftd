@@ -1,0 +1,247 @@
+-- import: fpm
+-- import: fifthtry.github.io/kameri-wasm-backend/assets
+-- import: fifthtry.github.io/kameri-wasm-backend/utils
+
+-- optional string todo-status:
+$always-include$: true
+
+-- optional integer todo-id:
+$always-include$: true
+
+
+-- record todo:
+integer id:
+string title:
+string status:
+string description:
+
+-- todo list todos:
+$processor$: http
+method: get
+url: http://127.0.0.1:8001/api/todos/
+
+
+-- ftd.column list-todo:
+width: percent 100
+padding-vertical: 20
+padding-horizontal: 50
+spacing: 30
+align: center
+string add-todo-page:
+
+--- ftd.row:
+width: fill
+spacing: space-between
+
+
+--- ftd.text: All TODOs
+role: $fpm.type.heading-large
+style: bold
+
+--- utils.button: Add TODO
+link: $add-todo-page
+
+--- container: ftd.main
+
+--- display-todo:
+$loop$: $todos as $todo
+todo: $todo
+
+-- ftd.column display-todo:
+todo todo:
+spacing: 30
+width: fill
+border-color: $utils.black
+border-radius: 10
+padding: 15
+string status: $todo.status
+background-color: $fpm.main.success.base
+shadow-color: $fpm.color.main.cta-tertiary.border
+shadow-offset-x: 1
+shadow-offset-y: 2
+shadow-size: 2
+shadow-blur: 3
+
+--- ftd.row:
+width: fill
+spacing: space-between
+
+
+--- ftd.text: $todo.title
+style: bold
+role: $fpm.type.heading-small
+
+
+--- ftd.row:
+spacing: 20
+
+
+--- ftd.input:
+value: $status
+border-width: 1
+border-radius: 5
+padding: 5
+$on-input$: $status=$VALUE
+background-color: $fpm.main.text-strong
+
+
+--- utils.update-button: Update
+$on-click$: $todo-status = $status
+$on-click$: $todo-id = $todo.id
+$on-click$: message-host $update-status-api
+
+
+--- container: ftd.main
+
+--- ftd.text: $todo.description
+role: $fpm.type.copy-relaxed
+
+
+
+
+-- object update-status-api:
+function: http
+method: post
+url: /api/update-todo/
+id: $todo-id
+status: $todo-status
+
+
+; Add todo component
+
+
+;; Input Box with Label
+-- ftd.column input-box:
+caption label:
+optional string placeholder:
+optional string $value:
+optional string $error:
+boolean multiline: false
+string height: 40
+padding-left: $fpm.space.space-7
+margin-top: $fpm.space.space-7
+height: 50
+
+
+--- ftd.row:
+width: fill
+
+
+;; Input Box Label
+--- ftd.text: $label
+role: $fpm.type.copy-large
+text-align: right
+style: bold
+width: 120
+
+;; Input Box
+--- ftd.input:
+placeholder: $placeholder
+padding-horizontal: 16
+padding-vertical: 8
+margin-left: $fpm.space.space-4
+width: 400
+height: $height
+border-width: 2
+border-color: $fpm.color.main.border
+border-radius: 8
+multiline: $multiline
+$on-input$: $value=$VALUE
+$on-focus$: $error=
+
+--- container: ftd.main
+
+;; input error
+--- ftd.text: $error
+role: $fpm.type.copy-relaxed
+padding-left: 136
+color: $fpm.color.main.error.text
+
+
+-- ftd.row button:
+caption text:
+border-width: 2
+border-radius: 10
+border-color: $utils.transparent-color
+background-color: $fpm.color.main.custom.two
+padding: 10
+margin-top: 100
+margin-left: 250
+
+--- ftd.text: $text
+role: $fpm.type.heading-small
+color: $utils.black
+style: bold
+width: fill
+
+
+-- optional string title:
+$always-include$: true
+
+-- optional string title-error:
+$always-include$: true
+
+-- optional string status:
+$always-include$: true
+
+-- optional string status-error:
+$always-include$: true
+
+
+-- optional string description:
+$always-include$: true
+
+-- optional string description-error:
+$always-include$: true
+
+
+-- ftd.column add-todo-widget:
+width: percent 80
+align: center
+
+--- ftd.text: ADD NEW TODO
+role: $fpm.type.heading-large
+text-align: center
+style: bold
+margin-top: $fpm.space.space-8
+padding-left: 30
+align: center
+
+
+--- input-box: Title
+$value: $title
+$error: $title-error
+placeholder: Title of the todo
+align: center
+
+
+--- input-box: Status
+$value: $status
+$error: $status-error
+placeholder: Status of the todo
+align: center
+
+--- input-box: Description
+$value: $description
+$error: $description-error
+placeholder: Description of the todo
+multiline: true
+height: 100
+align: center
+
+
+--- button: Add TODO
+$on-click$: message-host $add-api
+align: center
+
+
+-- object add-api:
+function: http
+method: post
+url: /api/add-todo/
+title: $title
+status: $status
+description: $description
+$title-error: $title-error
+$status-error: $status-error
+$description-error: $description-error

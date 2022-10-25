@@ -1,11 +1,33 @@
 -- import: fpm
+-- import: env
+
+-- fpm.backend-header list package-headers:
+
+-- package-headers:
+header-key: KAMERI-SUPABASE-PROJECT-ID
+header-value: $env.FPM_SUPABASE_PROJECT_ID
+
+-- package-headers:
+header-key: KAMERI-SUPABASE-API-KEY
+header-value: $env.FPM_SUPABASE_API_KEY
+
 
 -- fpm.package: fifthtry.github.io/kameri-wasm-backend
 zip: github.com/fifthtry/kameri-wasm-backend/archive/refs/heads/main.zip
 download-base-url: https://raw.githubusercontent.com/fifthtry/kameri-wasm-backend/main
+backend: true
+backend-headers: package-headers
 
 -- fpm.dependency: fifthtry.github.io/package-doc as pd
 
 -- fpm.dependency: fifthtry.github.io/doc-site as ds
 
 -- fpm.auto-import: ds
+
+-- fpm.sitemap:
+
+# Home: /
+
+- Getting Started: /
+- FAQ: /faq/
+- Demo: /demo/
