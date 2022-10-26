@@ -9,7 +9,8 @@ simply clone the template repository and set the environment variables
 lang: sh
 caption: Clone the Kameri application template
 
-\$ git clone asd
+\$ git clone -b template --single-branch https://github.com/FifthTry/kameri-wasm-backend.git my-todo-app
+
 
 -- ds.markdown:
 
