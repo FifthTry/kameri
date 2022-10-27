@@ -1,4 +1,4 @@
--- import: fifthtry.github.io/kameri-wasm-backend/components as kameri-components
+-- import: fifthtry.github.io/kameri/ui as kameri-ui
 
 -- ds.page: Embedding Kameri app into an existing `fpm` package
 
@@ -27,7 +27,7 @@ header-value: $env.FPM_SUPABASE_API_KEY
 backend: true
 backend-headers: package-headers
 
-\-- fpm.dependency: fifthtry.github.io/kameri-wasm-backend as kameri
+\-- fpm.dependency: fifthtry.github.io/kameri as kameri
 mountpoint: /api/
 
 -- ds.markdown:
@@ -35,7 +35,7 @@ mountpoint: /api/
 Once the `FPM.ftd` has been configured properly, you'll need to export the
 appropriate variables from your shell environment
 
--- kameri-components.set-env-variables:
+-- kameri-ui.set-env-variables:
 
 -- ds.markdown:
 

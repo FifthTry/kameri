@@ -12,9 +12,9 @@ header-key: KAMERI-SUPABASE-API-KEY
 header-value: $env.FPM_SUPABASE_API_KEY
 
 
--- fpm.package: fifthtry.github.io/kameri-wasm-backend
-zip: github.com/fifthtry/kameri-wasm-backend/archive/refs/heads/main.zip
-download-base-url: https://raw.githubusercontent.com/fifthtry/kameri-wasm-backend/main
+-- fpm.package: fifthtry.github.io/kameri
+zip: github.com/fifthtry/kameri/archive/refs/heads/main.zip
+download-base-url: https://raw.githubusercontent.com/fifthtry/kameri/main
 backend: true
 backend-headers: package-headers
 
@@ -29,9 +29,9 @@ backend-headers: package-headers
 # Home: /
 
 - Getting Started: /
-  - Fresh package: /fresh-installation/
-  - Existing package: /existing-installation/
-  - Using the widgets: /using-widgets/
+  - Fresh package: /fresh-package/
+  - Existing package: /existing-package/
+  - Using the UI components: /using-components/
 - FAQ: /faq/
 - Demo: /demo/
 

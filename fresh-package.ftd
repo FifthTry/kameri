@@ -1,0 +1,23 @@
+-- import: fifthtry.github.io/kameri/ui as kameri-ui
+
+-- ds.page: Fresh Package
+
+The easiest way to get started with your own instance of the Kameri app is to
+simply clone the template repository and set the environment variables
+
+-- ds.code:
+lang: sh
+caption: Clone the Kameri application template
+
+\$ git clone -b template --single-branch https://github.com/FifthTry/kameri.git my-todo-app
+
+
+-- ds.markdown:
+
+And set your environment variables.
+
+-- kameri-ui.set-env-variables:
+
+-- ds.markdown:
+
+You can now run the application using the command `fpm serve 8001`.

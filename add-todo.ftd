@@ -1,3 +1,5 @@
--- import: fifthtry.github.io/kameri-wasm-backend/components as kameri-components
+-- import: fifthtry.github.io/kameri/ui as kameri-ui
 
--- kameri-components.add-todo-widget:
+-- ds.page:
+
+-- kameri-ui.add-todo-widget:
