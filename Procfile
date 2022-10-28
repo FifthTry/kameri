@@ -1,1 +1,1 @@
-web: fpm serve --bind 0.0.0.0 --download-base-url $DOWNLOAD_BASE_URL --port $PORT 
+web: fpm serve --bind 0.0.0.0 --download-base-url $DOWNLOAD_BASE_URL --port $PORT

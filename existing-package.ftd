@@ -28,7 +28,7 @@ backend: true
 backend-headers: package-headers
 
 \-- fpm.dependency: kameri.herokuapp.com as kameri
-mountpoint: /api/
+mount-point: /api/
 
 -- ds.markdown:
 
