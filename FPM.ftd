@@ -12,7 +12,7 @@ header-key: KAMERI-SUPABASE-API-KEY
 header-value: $env.FPM_SUPABASE_API_KEY
 
 
--- fpm.package: fifthtry.github.io/kameri
+-- fpm.package: kameri.herokuapp.com
 zip: github.com/fifthtry/kameri/archive/refs/heads/main.zip
 download-base-url: https://raw.githubusercontent.com/fifthtry/kameri/main
 backend: true

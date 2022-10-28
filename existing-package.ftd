@@ -1,4 +1,4 @@
--- import: fifthtry.github.io/kameri/ui as kameri-ui
+-- import: kameri.herokuapp.com/ui as kameri-ui
 
 -- ds.page: Embedding Kameri app into an existing `fpm` package
 
@@ -27,7 +27,7 @@ header-value: $env.FPM_SUPABASE_API_KEY
 backend: true
 backend-headers: package-headers
 
-\-- fpm.dependency: fifthtry.github.io/kameri as kameri
+\-- fpm.dependency: kameri.herokuapp.com as kameri
 mountpoint: /api/
 
 -- ds.markdown:

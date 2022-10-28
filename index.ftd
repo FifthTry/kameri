@@ -1,6 +1,6 @@
 -- ds.page: FPM application to plug in TODO list to your website
 
-[Kameri](https://fifthtry.github.io/kameri/) is a FPM TODO
+[Kameri](https://kameri.herokuapp.com/) is a FPM TODO
 application distribution. It uses WASM as a backend that you can use in your own
 package to introduce the TODO list functionality
 

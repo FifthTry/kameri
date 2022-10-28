@@ -10,7 +10,7 @@ lang: ftd
 caption: Usage of the List TODOs component
 
 \; This line imports the todo list to your page. You can use it inside any component you desire
-\-- import: fifthtry.github.io/kameri/ui as kameri-ui
+\-- import: kameri.herokuapp.com/ui as kameri-ui
 
 \; First we retrieve the TODO list from the backend using the http processor.
 \-- kameri-ui.todo list todos:
@@ -32,7 +32,7 @@ add-todo-page: /add-todo/
 lang: ftd
 caption: Usage of the Kameri app components
 
-\-- import: fifthtry.github.io/kameri/ui as kameri-ui
+\-- import: kameri.herokuapp.com/ui as kameri-ui
 
 \; This line imports the `Add todo` widget to your fpm package.
 \-- kameri-ui.add-todo-widget:

@@ -1,7 +1,7 @@
 -- import: fpm
 -- import: ds
--- import: fifthtry.github.io/kameri/assets
--- import: fifthtry.github.io/kameri/utils
+-- import: kameri.herokuapp.com/assets
+-- import: kameri.herokuapp.com/utils
 
 -- optional string todo-status:
 $always-include$: true
