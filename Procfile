@@ -1,0 +1,1 @@
+web: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ftd-lang/fpm/main/install-fpm.sh)" && fpm serve 8001
